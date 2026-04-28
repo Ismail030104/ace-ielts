@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Mock Test — ACE | Australian Centre for Education</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23C8102E%22/><text y=%2270%22 x=%2250%22 font-size=%2260%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22serif%22 font-weight=%22bold%22>A</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #C8102E;
+    --red-dark: #9E0B22;
+    --red-darker: #6B0717;
+    --red-light: #F8E5E8;
+    --red-lighter: #FDF5F6;
+    --gold: #D4A24C;
+    --ink: #1A1A1A;
+    --charcoal: #2D2D2D;
+    --slate: #4A4A4A;
+    --stone: #8A8A8A;
+    --paper: #FAFAF7;
+    --cream: #F5F2EB;
+    --white: #FFFFFF;
+    --line: #E5E1D8;
+    --green: #2D7D46;
+    --green-bg: #E8F4EC;
+    --error-bg: #FCEAEC;
+    --shadow-sm: 0 1px 2px rgba(26,26,26,0.04), 0 1px 3px rgba(26,26,26,0.06);
+    --shadow-md: 0 4px 6px rgba(26,26,26,0.05), 0 10px 20px rgba(26,26,26,0.08);
+    --shadow-lg: 0 10px 30px rgba(26,26,26,0.10), 0 25px 60px rgba(200,16,46,0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  html, body {
+    height: 100%;
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .display-font {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: -0.02em;
+  }
+
+  .mono { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+  input { font-family: inherit; }
+
+  /* ============ WELCOME SCREEN ============ */
+  .welcome-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: 
+      radial-gradient(ellipse at top right, rgba(200,16,46,0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom left, rgba(212,162,76,0.05) 0%, transparent 50%),
+      var(--paper);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .welcome-screen::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(26,26,26,0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26,26,26,0.015) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .welcome-card {
+    max-width: 720px;
+    width: 100%;
+    background: var(--white);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    z-index: 1;
+    border: 1px solid var(--line);
+  }
+
+  .welcome-header {
+    background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 60%, var(--red-darker) 100%);
+    color: white;
+    padding: 50px 60px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .welcome-header::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 250px; height: 250px;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .crest {
+    width: 56px;
+    height: 56px;
+    background: white;
+    color: var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    position: relative;
+  }
+
+  .crest::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border: 1px solid rgba(255,255,255,0.4);
+  }
+
+  .welcome-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+
+  .welcome-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+
+  .welcome-subtitle {
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+
+  .welcome-meta {
+    display: flex;
+    gap: 32px;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .meta-item {
+    flex: 1;
+  }
+  .meta-label {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 4px;
+  }
+  .meta-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  .welcome-body {
+    padding: 50px 60px;
+  }
+
+  .section-title {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 24px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .form-group { margin-bottom: 22px; }
+  .form-label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .form-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid var(--line);
+    background: var(--cream);
+    font-size: 15px;
+    color: var(--ink);
+    transition: all 0.2s ease;
+  }
+  .form-input:focus {
+    outline: none;
+    border-color: var(--red);
+    background: white;
+    box-shadow: 0 0 0 3px var(--red-light);
+  }
+
+  .rules-box {
+    background: var(--red-lighter);
+    border-left: 3px solid var(--red);
+    padding: 24px 28px;
+    margin: 32px 0;
+    position: relative;
+  }
+  .rules-title {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red-dark);
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .rules-list { list-style: none; }
+  .rules-list li {
+    font-size: 14px;
+    color: var(--charcoal);
+    padding: 6px 0 6px 24px;
+    position: relative;
+    line-height: 1.6;
+  }
+  .rules-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 8px; height: 1px;
+    background: var(--red);
+  }
+  .rules-list strong { color: var(--red-dark); font-weight: 600; }
+
+  .btn-primary {
+    width: 100%;
+    background: var(--red);
+    color: white;
+    padding: 18px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--red-dark) 0%, var(--red-darker) 100%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .btn-primary:hover:not(:disabled)::before { opacity: 1; }
+  .btn-primary span { position: relative; z-index: 1; }
+  .btn-primary:disabled {
+    background: #D5D2CB;
+    color: #999;
+    cursor: not-allowed;
+  }
+
+  .footer-mark {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--stone);
+  }
+  .footer-mark span { color: var(--red); }
+
+  /* ============ TEST SCREEN ============ */
+  .test-screen {
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    background: var(--paper);
+  }
+  .test-screen.active { display: flex; }
+
+  .top-bar {
+    background: linear-gradient(to right, var(--ink), var(--charcoal));
+    color: white;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid var(--red);
+    flex-shrink: 0;
+  }
+
+  .top-bar-left { display: flex; align-items: center; gap: 24px; }
+
+  .ace-mark {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .ace-mark-logo {
+    width: 36px; height: 36px;
+    background: var(--red);
+    color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .ace-mark-text {
+    line-height: 1.2;
+  }
+  .ace-mark-text .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .ace-mark-text .sub {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .divider-v {
+    width: 1px; height: 32px;
+    background: rgba(255,255,255,0.15);
+  }
+
+  .candidate-info { font-size: 13px; }
+  .candidate-info .label {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .timer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: all 0.3s;
+  }
+  .timer.warning {
+    background: var(--red);
+    border-color: var(--red-dark);
+    animation: pulse 1.5s infinite;
+  }
+  .timer-clock {
+    width: 18px; height: 18px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    position: relative;
+  }
+  .timer-clock::before, .timer-clock::after {
+    content: '';
+    position: absolute;
+    background: currentColor;
+    left: 50%;
+  }
+  .timer-clock::before {
+    width: 1.5px; height: 5px;
+    top: 2px;
+    transform: translateX(-50%);
+  }
+  .timer-clock::after {
+    width: 1.5px; height: 4px;
+    top: 50%;
+    transform: translate(-50%, -1px) rotate(60deg);
+    transform-origin: top center;
+  }
+  .timer-text {
+    font-family: 'Inter', monospace;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(200,16,46,0.6); }
+    50% { box-shadow: 0 0 0 8px rgba(200,16,46,0); }
+  }
+
+  .btn-submit {
+    background: white;
+    color: var(--red);
+    padding: 10px 22px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+  .btn-submit:hover { background: var(--red-light); }
+
+  .passage-tabs {
+    background: white;
+    border-bottom: 1px solid var(--line);
+    padding: 0 24px;
+    display: flex;
+    flex-shrink: 0;
+  }
+  .passage-tab {
+    padding: 16px 28px;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--stone);
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+  .passage-tab.active {
+    color: var(--red);
+    border-bottom-color: var(--red);
+    font-weight: 600;
+  }
+  .passage-tab:hover { color: var(--charcoal); }
+  .passage-tab .count {
+    margin-left: 8px;
+    color: var(--stone);
+    font-size: 11px;
+    letter-spacing: 0;
+  }
+  .passage-tab.active .count { color: var(--red); }
+
+  .test-main {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .passage-panel {
+    width: 50%;
+    overflow-y: auto;
+    background: white;
+    border-right: 1px solid var(--line);
+  }
+
+  .passage-content {
+    padding: 48px 60px;
+    max-width: 700px;
+  }
+
+  .passage-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  .passage-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+  .passage-title::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--red);
+  }
+
+  .passage-text {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--charcoal);
+    font-family: 'Inter', sans-serif;
+  }
+  .passage-text p { margin-bottom: 18px; }
+  .passage-text p:first-child::first-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    font-weight: 600;
+    color: var(--red);
+    float: left;
+    line-height: 0.9;
+    margin: 6px 8px 0 0;
+  }
+
+  .questions-panel {
+    width: 50%;
+    overflow-y: auto;
+    background: var(--paper);
+  }
+
+  .questions-content { padding: 48px 48px; }
+
+  .questions-header {
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 28px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .questions-header::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .question-card {
+    background: white;
+    border: 1px solid var(--line);
+    padding: 22px 24px;
+    margin-bottom: 16px;
+    transition: all 0.2s;
+  }
+  .question-card:hover { border-color: var(--stone); }
+  .question-card.answered { border-left: 3px solid var(--red); }
+
+  .question-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .question-num {
+    background: var(--ink);
+    color: white;
+    width: 26px; height: 26px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .question-card.answered .question-num { background: var(--red); }
+  .question-type {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--stone);
+    font-weight: 500;
+  }
+
+  .question-text {
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  .options-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .option-btn {
+    padding: 10px 16px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: white;
+    color: var(--charcoal);
+    border: 1.5px solid var(--line);
+    transition: all 0.15s;
+    font-weight: 500;
+  }
+  .option-btn:hover {
+    border-color: var(--red);
+    color: var(--red);
+  }
+  .option-btn.selected {
+    background: var(--red);
+    color: white;
+    border-color: var(--red);
+  }
+
+  .options-list { display: flex; flex-direction: column; gap: 8px; }
+  .option-mcq {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    background: white;
+    border: 1.5px solid var(--line);
+    cursor: pointer;
+    transition: all 0.15s;
+    text-align: left;
+  }
+  .option-mcq:hover { border-color: var(--red); }
+  .option-mcq.selected {
+    background: var(--red);
+    color: white;
+    border-color: var(--red);
+  }
+  .option-letter {
+    flex-shrink: 0;
+    width: 26px; height: 26px;
+    border: 1.5px solid var(--stone);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .option-mcq.selected .option-letter {
+    border-color: white;
+    background: rgba(255,255,255,0.15);
+  }
+  .option-mcq .option-text { font-size: 14px; line-height: 1.4; }
+
+  .input-text {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid var(--line);
+    background: var(--cream);
+    font-size: 14px;
+    color: var(--ink);
+    transition: all 0.2s;
+  }
+  .input-text:focus {
+    outline: none;
+    border-color: var(--red);
+    background: white;
+    box-shadow: 0 0 0 3px var(--red-light);
+  }
+
+  .headings-list {
+    background: var(--cream);
+    padding: 16px 20px;
+    margin-bottom: 14px;
+    border-left: 2px solid var(--red);
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .headings-list .h-label {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .headings-list strong { color: var(--red); margin-right: 6px; }
+
+  .nav-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+    padding-bottom: 32px;
+  }
+  .nav-btn {
+    padding: 12px 24px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-btn-prev {
+    background: white;
+    color: var(--charcoal);
+    border: 1.5px solid var(--line);
+  }
+  .nav-btn-prev:hover:not(:disabled) {
+    border-color: var(--red);
+    color: var(--red);
+  }
+  .nav-btn-next {
+    background: var(--red);
+    color: white;
+  }
+  .nav-btn-next:hover:not(:disabled) { background: var(--red-dark); }
+  .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+  /* Modal */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(26,26,26,0.7);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 20px;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal {
+    background: white;
+    max-width: 460px;
+    width: 100%;
+    box-shadow: var(--shadow-lg);
+  }
+  .modal-header {
+    background: var(--red);
+    color: white;
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .modal-icon {
+    width: 28px; height: 28px;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .modal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .modal-body {
+    padding: 24px 28px;
+  }
+  .modal-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--charcoal);
+    margin-bottom: 8px;
+  }
+  .modal-text strong { color: var(--red); }
+  .modal-actions {
+    display: flex;
+    gap: 10px;
+    padding: 0 28px 24px;
+  }
+  .modal-btn {
+    flex: 1;
+    padding: 14px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .modal-btn-cancel {
+    background: white;
+    color: var(--charcoal);
+    border: 1.5px solid var(--line);
+  }
+  .modal-btn-cancel:hover { border-color: var(--ink); }
+  .modal-btn-confirm {
+    background: var(--red);
+    color: white;
+  }
+  .modal-btn-confirm:hover { background: var(--red-dark); }
+
+  /* ============ RESULTS SCREEN ============ */
+  .results-screen {
+    min-height: 100vh;
+    display: none;
+    padding: 40px 20px;
+    background: 
+      radial-gradient(ellipse at top right, rgba(200,16,46,0.05) 0%, transparent 50%),
+      var(--paper);
+  }
+  .results-screen.active { display: block; }
+  .results-container {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .results-header {
+    background: white;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 32px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  .results-header-top {
+    background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 60%, var(--red-darker) 100%);
+    color: white;
+    padding: 40px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .results-header-top::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+  }
+  .results-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .ribbon-icon {
+    width: 16px; height: 16px;
+    background: white;
+    color: var(--red);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 10px;
+  }
+  .results-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 1.1;
+  }
+  .results-id {
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    margin-top: 6px;
+    letter-spacing: 0.05em;
+  }
+
+  .results-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .stat-block {
+    padding: 36px 28px;
+    text-align: center;
+    border-right: 1px solid var(--line);
+    position: relative;
+  }
+  .stat-block:last-child { border-right: none; }
+  .stat-block.feature { background: var(--red-lighter); }
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  .stat-block.feature .stat-label { color: var(--red); }
+  .stat-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .stat-block.feature .stat-value { color: var(--red); }
+  .stat-suffix {
+    font-size: 22px;
+    color: var(--stone);
+  }
+
+  .answer-key-section {
+    background: white;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--line);
+  }
+  .answer-key-header {
+    padding: 32px 48px;
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(to bottom, white, var(--cream));
+  }
+  .answer-key-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .answer-key-subtitle {
+    font-size: 14px;
+    color: var(--slate);
+    line-height: 1.5;
+  }
+  .answer-key-subtitle .correct { color: var(--green); font-weight: 600; }
+  .answer-key-subtitle .incorrect { color: var(--red); font-weight: 600; }
+
+  .answer-key-body { padding: 36px 48px; }
+
+  .passage-section {
+    margin-bottom: 36px;
+  }
+  .passage-section:last-child { margin-bottom: 0; }
+  .passage-section-title {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .passage-section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .answer-row {
+    padding: 16px 20px;
+    margin-bottom: 8px;
+    border-left: 4px solid;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .answer-row.correct {
+    background: var(--green-bg);
+    border-left-color: var(--green);
+  }
+  .answer-row.incorrect {
+    background: var(--error-bg);
+    border-left-color: var(--red);
+  }
+  .answer-icon {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+  }
+  .answer-row.correct .answer-icon { background: var(--green); }
+  .answer-row.incorrect .answer-icon { background: var(--red); }
+
+  .answer-content { flex: 1; }
+  .answer-question {
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  .answer-question .qnum { font-weight: 700; }
+  .answer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    font-size: 13px;
+  }
+  .answer-grid .label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--stone);
+    display: block;
+    margin-bottom: 2px;
+    font-weight: 600;
+  }
+  .answer-grid .value { font-weight: 600; }
+  .answer-row.correct .answer-grid .your-answer .value { color: var(--green); }
+  .answer-row.incorrect .answer-grid .your-answer .value { color: var(--red); }
+  .answer-grid .correct-answer .value { color: var(--green); }
+
+  .results-actions {
+    text-align: center;
+    margin-top: 40px;
+  }
+  .btn-restart {
+    background: var(--red);
+    color: white;
+    padding: 16px 40px;
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  .btn-restart:hover { background: var(--red-dark); }
+
+  /* Mobile */
+  @media (max-width: 900px) {
+    .test-main { flex-direction: column; }
+    .passage-panel, .questions-panel { width: 100%; height: 50%; }
+    .passage-content, .questions-content { padding: 24px; }
+    .welcome-header, .welcome-body { padding: 32px 28px; }
+    .welcome-title { font-size: 32px; }
+    .top-bar { padding: 12px 16px; flex-wrap: wrap; gap: 10px; }
+    .ace-mark-text .name { font-size: 14px; }
+    .candidate-info { display: none; }
+    .results-stats { grid-template-columns: 1fr; }
+    .stat-block { border-right: none; border-bottom: 1px solid var(--line); }
+    .answer-grid { grid-template-columns: 1fr; }
+    .results-name { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ WELCOME SCREEN ============ -->
+<div id="welcome" class="welcome-screen">
+  <div class="welcome-card">
+    <div class="welcome-header">
+      <div class="crest">A</div>
+      <div class="welcome-eyebrow">Australian Centre for Education</div>
+      <h1 class="welcome-title">IELTS Academic Reading</h1>
+      <p class="welcome-subtitle">Mock Examination · Computer-Delivered Test</p>
+      <div class="welcome-meta">
+        <div class="meta-item">
+          <div class="meta-label">Duration</div>
+          <div class="meta-value">60 Minutes</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Passages</div>
+          <div class="meta-value">3</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Questions</div>
+          <div class="meta-value">40</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="welcome-body">
+      <h2 class="section-title">Candidate Registration</h2>
+
+      <div class="form-group">
+        <label class="form-label">Full Name</label>
+        <input type="text" id="studentName" class="form-input" placeholder="Enter your full name as on ID" autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Student Identification Number</label>
+        <input type="text" id="studentId" class="form-input" placeholder="e.g. ACE-2026-001" autocomplete="off">
+      </div>
+
+      <div class="rules-box">
+        <h3 class="rules-title">Examination Rules</h3>
+        <ul class="rules-list">
+          <li>You will have <strong>60 minutes</strong> to complete all 40 questions.</li>
+          <li>The timer begins when you click <strong>Begin Examination</strong> and cannot be paused.</li>
+          <li>Read each passage carefully. You may navigate between passages freely.</li>
+          <li>Your answers are saved automatically as you complete them.</li>
+          <li>Spelling matters — answers must be spelled correctly.</li>
+          <li>Your estimated band score and full answer key will appear after submission.</li>
+        </ul>
+      </div>
+
+      <button id="startBtn" class="btn-primary" disabled><span>Begin Examination</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TEST SCREEN ============ -->
+<div id="testScreen" class="test-screen">
+  <header class="top-bar">
+    <div class="top-bar-left">
+      <div class="ace-mark">
+        <div class="ace-mark-logo">A</div>
+        <div class="ace-mark-text">
+          <div class="name">ACE</div>
+          <div class="sub">Mock Test Centre</div>
+        </div>
+      </div>
+      <div class="divider-v"></div>
+      <div class="candidate-info">
+        <span class="label">Candidate</span>
+        <span id="candidateDisplay">—</span>
+      </div>
+      <div class="divider-v"></div>
+      <div class="candidate-info">
+        <span class="label">Progress</span>
+        <span id="progressDisplay">0 / 40</span>
+      </div>
+    </div>
+
+    <div id="timer" class="timer">
+      <div class="timer-clock"></div>
+      <span id="timerText" class="timer-text mono">60:00</span>
+    </div>
+
+    <button id="submitBtn" class="btn-submit">Submit Test</button>
+  </header>
+
+  <nav class="passage-tabs" id="passageTabs"></nav>
+
+  <main class="test-main">
+    <section class="passage-panel">
+      <div class="passage-content">
+        <div class="passage-eyebrow" id="passageEyebrow">Reading Passage 1</div>
+        <h2 class="passage-title" id="passageTitle"></h2>
+        <div class="passage-text" id="passageText"></div>
+      </div>
+    </section>
+
+    <section class="questions-panel">
+      <div class="questions-content">
+        <div class="questions-header" id="questionsHeader">Questions 1–13</div>
+        <div id="questionsList"></div>
+
+        <div class="nav-row">
+          <button id="prevBtn" class="nav-btn nav-btn-prev">← Previous</button>
+          <button id="nextBtn" class="nav-btn nav-btn-next">Next →</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ============ RESULTS SCREEN ============ -->
+<div id="resultsScreen" class="results-screen">
+  <div class="results-container">
+    <div class="results-header">
+      <div class="results-header-top">
+        <div class="results-eyebrow"><span class="ribbon-icon">A</span> Examination Results · ACE</div>
+        <h1 class="results-name" id="resultName">—</h1>
+        <p class="results-id" id="resultId">—</p>
+      </div>
+      <div class="results-stats">
+        <div class="stat-block">
+          <div class="stat-label">Correct Answers</div>
+          <div class="stat-value"><span id="correctCount">0</span><span class="stat-suffix">/40</span></div>
+        </div>
+        <div class="stat-block feature">
+          <div class="stat-label">Estimated Band Score</div>
+          <div class="stat-value" id="bandScore">0.0</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-label">Accuracy</div>
+          <div class="stat-value"><span id="accuracy">0</span><span class="stat-suffix">%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="answer-key-section">
+      <div class="answer-key-header">
+        <h2 class="answer-key-title">Answer Key &amp; Review</h2>
+        <p class="answer-key-subtitle">
+          <span class="correct">Green</span> indicates correct answers, <span class="incorrect">red</span> indicates incorrect answers. Review your work carefully to identify areas for improvement.
+        </p>
+      </div>
+      <div class="answer-key-body" id="answerKeyBody"></div>
+    </div>
+
+    <div class="results-actions">
+      <button id="restartBtn" class="btn-restart">Start New Test</button>
+    </div>
+  </div>
+</div>
+
+<!-- Submit confirmation modal -->
+<div id="submitModal" class="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-icon">!</div>
+      <div class="modal-title">Submit Examination?</div>
+    </div>
+    <div class="modal-body">
+      <p class="modal-text">You have answered <strong id="modalAnswered">0 of 40</strong> questions.</p>
+      <p class="modal-text" id="modalUnanswered" style="display:none;">Unanswered questions will be marked as incorrect. This action cannot be undone.</p>
+      <p class="modal-text" id="modalAllAnswered" style="display:none;">This action cannot be undone.</p>
+    </div>
+    <div class="modal-actions">
+      <button class="modal-btn modal-btn-cancel" id="cancelSubmitBtn">Continue Test</button>
+      <button class="modal-btn modal-btn-confirm" id="confirmSubmitBtn">Submit Now</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============ TEST DATA ============
+const testData = {
+  passages: [
+    {
+      number: 1,
+      title: "The History of the Tea Trade",
+      text: `Tea, one of the world's most consumed beverages after water, has a history stretching back over 4,000 years. According to Chinese legend, tea was discovered by Emperor Shen Nung in 2737 BC when leaves from a wild tree blew into his pot of boiling water. Whether or not this tale is true, what is certain is that tea cultivation began in China and remained a Chinese secret for centuries.
+
+The first historical reference to tea drinking appears in Chinese texts from the third century AD, though it likely began much earlier. By the Tang Dynasty (618–907 AD), tea had become firmly established as China's national drink. A scholar named Lu Yu wrote the first definitive book on tea, the Cha Jing or "Classic of Tea," around 760 AD. This remarkable work covered everything from the cultivation and preparation of tea to the proper utensils and water for brewing it.
+
+Tea reached Japan in the early ninth century, brought back by Buddhist monks who had studied in China. Japanese culture embraced tea wholeheartedly, eventually developing the elaborate tea ceremony known as chanoyu. However, tea remained virtually unknown in Europe until the seventeenth century. Portuguese Jesuit missionaries in Asia were among the first Europeans to encounter the drink, but it was Dutch traders who first imported significant quantities of tea to Europe in 1610.
+
+The British, who would later become the world's most enthusiastic tea drinkers, were initially slow to adopt the beverage. Tea was first sold in London coffee houses in the 1650s but remained an expensive luxury. The marriage of King Charles II to the Portuguese princess Catherine of Braganza in 1662 helped popularize tea among the English aristocracy, as Catherine was an avid tea drinker.
+
+By the eighteenth century, tea consumption in Britain had grown enormously. The British East India Company held a monopoly on tea imports and made vast profits. However, high taxes on tea led to widespread smuggling, with an estimated seven million pounds of tea being smuggled into Britain annually by the 1770s, compared to just five million pounds imported legally.
+
+The British thirst for tea had unintended consequences. Britain paid for Chinese tea with silver, which created a serious trade imbalance. To address this, British traders began illegally exporting opium from India to China, leading eventually to the Opium Wars of the mid-nineteenth century. Meanwhile, the British attempted to break China's tea monopoly by establishing tea plantations in India, particularly in Assam and Darjeeling. By 1888, Indian tea exports to Britain exceeded those from China for the first time.
+
+Today, tea is grown in over 60 countries, with China, India, Kenya, and Sri Lanka being the largest producers. The global tea industry is worth over $50 billion annually, and the simple beverage that began as a Chinese imperial discovery now connects cultures and economies across the world.`,
+      questions: [
+        { id: 1, type: "tfng", text: "Tea was discovered by accident according to Chinese legend.", answer: "TRUE" },
+        { id: 2, type: "tfng", text: "Lu Yu's book about tea was published during the Tang Dynasty.", answer: "TRUE" },
+        { id: 3, type: "tfng", text: "The Japanese tea ceremony was developed before tea arrived in Japan.", answer: "FALSE" },
+        { id: 4, type: "tfng", text: "Portuguese traders were the first to import tea to Europe in large quantities.", answer: "FALSE" },
+        { id: 5, type: "tfng", text: "Tea was immediately popular in England when it first arrived.", answer: "FALSE" },
+        { id: 6, type: "tfng", text: "The British government banned tea smuggling in the 1770s.", answer: "NOT GIVEN" },
+        { id: 7, type: "fillblank", text: "Tea trade caused Britain to have a problem with __________ because they paid for tea with this metal.", answer: "silver" },
+        { id: 8, type: "fillblank", text: "British traders illegally exported __________ from India to China to balance trade.", answer: "opium" },
+        { id: 9, type: "fillblank", text: "By 1888, __________ tea exports to Britain became larger than Chinese exports.", answer: "Indian" },
+        { id: 10, type: "fillblank", text: "The global tea industry is currently worth more than $__________ billion per year.", answer: "50" },
+        { id: 11, type: "mcq", text: "What was Lu Yu's main contribution to tea history?", options: ["He discovered tea", "He wrote the first comprehensive book on tea", "He brought tea to Japan", "He started the British tea trade"], answer: "B" },
+        { id: 12, type: "mcq", text: "Why did Catherine of Braganza help popularize tea in England?", options: ["She owned tea plantations", "She married King Charles II and was a tea drinker", "She introduced tea to coffee houses", "She reduced taxes on tea"], answer: "B" },
+        { id: 13, type: "mcq", text: "What was a major consequence of British demand for Chinese tea?", options: ["The discovery of new tea varieties", "The Opium Wars", "The end of the East India Company", "The closure of Chinese ports"], answer: "B" }
+      ]
+    },
+    {
+      number: 2,
+      title: "The Science of Sleep",
+      text: `Sleep is a fundamental biological process that occupies roughly one-third of human life, yet its purpose remained mysterious to scientists for centuries. Only in recent decades has research begun to reveal the complex mechanisms and vital functions of sleep. Far from being a passive state of rest, sleep is now understood as an active and highly organized process essential for physical health, mental wellbeing, and cognitive function.
+
+Human sleep consists of two main types: REM (Rapid Eye Movement) sleep and non-REM sleep. Non-REM sleep is further divided into three stages, ranging from light sleep to deep sleep. During a typical night, a person cycles through these stages approximately every 90 minutes, with each cycle containing both REM and non-REM phases. Deep sleep predominates in the early part of the night, while REM sleep, where most vivid dreaming occurs, becomes more prominent toward morning.
+
+Research has identified several critical functions of sleep. During deep sleep, the body engages in physical restoration: tissues are repaired, growth hormones are released, and the immune system is strengthened. REM sleep, meanwhile, appears to play a crucial role in memory consolidation and emotional processing. Studies have shown that students who sleep after learning new material perform significantly better on tests than those who do not.
+
+The brain's role during sleep is particularly fascinating. Recent discoveries have revealed that during deep sleep, the brain activates a unique waste-clearance system called the glymphatic system. This system flushes out toxic proteins, including beta-amyloid, which is associated with Alzheimer's disease. This finding suggests that chronic sleep deprivation may contribute to neurodegenerative conditions.
+
+Sleep requirements vary by age. Newborns may sleep up to 17 hours daily, while teenagers need 8 to 10 hours and adults typically require 7 to 9 hours. Despite these well-established needs, modern society faces what researchers call a "sleep crisis." Approximately 35% of adults in industrialized nations report sleeping less than seven hours per night, with serious consequences for public health.
+
+The effects of insufficient sleep are wide-ranging. In the short term, sleep deprivation impairs concentration, reaction time, and decision-making. A person who has been awake for 17 hours shows cognitive impairment equivalent to having a blood alcohol level of 0.05%. Long-term sleep deficiency has been linked to obesity, diabetes, cardiovascular disease, depression, and weakened immunity.
+
+Modern lifestyles present numerous challenges to healthy sleep. Artificial lighting, particularly the blue light emitted by screens, suppresses melatonin production and delays sleep onset. Caffeine consumption, irregular schedules, and stress also disrupt sleep patterns. Sleep researchers recommend several strategies for better sleep: maintaining a consistent schedule, creating a dark and cool sleeping environment, avoiding screens before bed, and limiting caffeine after midday.
+
+Despite the challenges, awareness of sleep's importance is growing. Some companies now offer "nap rooms" for employees, and schools in several countries have shifted to later start times to accommodate teenage sleep patterns. As research continues to reveal sleep's profound importance, society may gradually adjust to give this essential biological process the priority it deserves.`,
+      questions: [
+        { id: 14, type: "heading", text: "Paragraph A: The structure and stages of sleep", showHeadings: true, headings: { "i": "Modern problems affecting sleep quality", "ii": "The structure and stages of sleep", "iii": "How sleep needs change with age", "iv": "Why sleep was once misunderstood", "v": "The brain's cleaning system during sleep" }, answer: "ii" },
+        { id: 15, type: "heading", text: "Paragraph B: Brain activity during sleep", answer: "v" },
+        { id: 16, type: "heading", text: "Paragraph C: Sleep duration recommendations", answer: "iii" },
+        { id: 17, type: "heading", text: "Paragraph D: Modern challenges to sleep", answer: "i" },
+        { id: 18, type: "fillblank", text: "A typical sleep cycle lasts approximately __________ minutes.", answer: "90" },
+        { id: 19, type: "fillblank", text: "The brain's waste-clearance system is called the __________ system.", answer: "glymphatic" },
+        { id: 20, type: "fillblank", text: "Beta-amyloid is a protein associated with __________ disease.", answer: "Alzheimer's" },
+        { id: 21, type: "fillblank", text: "About __________ % of adults in industrialized nations sleep less than seven hours.", answer: "35" },
+        { id: 22, type: "tfng", text: "REM sleep occurs more frequently in the early hours of sleep.", answer: "FALSE" },
+        { id: 23, type: "tfng", text: "Students who sleep after studying perform better on exams.", answer: "TRUE" },
+        { id: 24, type: "tfng", text: "Being awake for 17 hours has the same legal status as drinking alcohol.", answer: "NOT GIVEN" },
+        { id: 25, type: "tfng", text: "All schools have changed their start times to accommodate teenage sleep.", answer: "FALSE" },
+        { id: 26, type: "mcq", text: "What does blue light from screens do?", options: ["Increases melatonin", "Suppresses melatonin and delays sleep", "Causes deep sleep", "Has no effect on sleep"], answer: "B" }
+      ]
+    },
+    {
+      number: 3,
+      title: "The Rise of Urban Farming",
+      text: `As global populations increasingly concentrate in cities, a quiet revolution is taking place on rooftops, in abandoned warehouses, and in the unlikely spaces between skyscrapers. Urban farming, the practice of cultivating, processing, and distributing food in or around urban areas, is transforming how cities feed themselves. What was once dismissed as a hobby for environmental enthusiasts has emerged as a serious response to pressing global challenges including food security, climate change, and urban sustainability.
+
+The concept of urban farming is not new. During World War II, "victory gardens" in cities like London, New York, and Berlin produced significant portions of vegetables consumed during the war. By 1944, victory gardens were producing roughly 40% of all vegetables grown in the United States. After the war, however, cheap industrial agriculture and suburbanization caused urban farming to decline. Its recent resurgence reflects new economic, environmental, and social pressures.
+
+Modern urban farming takes many forms. Community gardens, where residents collectively cultivate shared plots, remain the most common type. Rooftop farms transform unused building tops into productive land, with notable examples including Brooklyn Grange in New York, which operates the world's largest rooftop soil farms across multiple buildings. Vertical farms represent the most technologically advanced form, growing crops in stacked layers under controlled conditions. The vertical farm AeroFarms in Newark, New Jersey, can produce up to 2 million pounds of leafy greens annually using 95% less water than traditional farming.
+
+The environmental benefits of urban farming are considerable. Transporting food long distances generates significant carbon emissions, with the average meal in industrialized countries traveling approximately 1,500 miles from farm to plate. Urban farms dramatically reduce these "food miles." Additionally, urban farms often use techniques such as composting, rainwater harvesting, and integrated pest management, reducing chemical inputs and waste. Some studies suggest that urban farms can produce up to 20 times more food per square meter than conventional farms when using vertical growing methods.
+
+Beyond environmental gains, urban farming offers important social benefits. Community gardens provide spaces for neighborhood interaction, particularly valuable in densely populated cities where social isolation can be common. They also serve educational purposes, teaching children where food comes from in an age when many urban residents have lost connection with agricultural processes. In low-income neighborhoods classified as "food deserts" — areas with limited access to fresh, affordable food — urban farms can significantly improve nutritional options.
+
+However, urban farming faces significant challenges. Land in cities is expensive, making large-scale operations financially difficult. Soil contamination from previous industrial use is a concern in many urban locations, requiring testing and sometimes expensive remediation or alternative growing methods. High-tech vertical farms require substantial energy inputs for lighting and climate control, which can offset some environmental benefits unless renewable energy is used. Furthermore, regulatory frameworks in many cities were not designed with agriculture in mind, creating bureaucratic obstacles for urban farmers.
+
+Despite these challenges, urban farming continues to grow. Singapore, with extremely limited agricultural land, has set a target of producing 30% of its nutritional needs locally by 2030, largely through urban farming. Detroit, a city devastated by industrial decline, has transformed thousands of vacant lots into urban farms, creating jobs and improving food access. These examples suggest that urban farming, while unlikely to fully replace conventional agriculture, will play an increasingly important role in feeding the world's growing urban populations.`,
+      questions: [
+        { id: 27, type: "mcq", text: "What does the writer say about urban farming today?", options: ["It has always been popular", "It is replacing all conventional farming", "It is now seen as a serious solution to global problems", "It is only for environmentalists"], answer: "C" },
+        { id: 28, type: "mcq", text: "Why did urban farming decline after WWII?", options: ["Lack of interest from governments", "Cheap industrial agriculture and suburbanization", "Soil contamination", "Climate change"], answer: "B" },
+        { id: 29, type: "mcq", text: "What is special about AeroFarms?", options: ["It is the oldest urban farm", "It uses 95% less water than traditional farming", "It only grows fruit", "It is located in Brooklyn"], answer: "B" },
+        { id: 30, type: "mcq", text: "What does 'food miles' refer to in the passage?", options: ["The size of farms", "How much food costs", "The distance food travels from farm to plate", "How healthy food is"], answer: "C" },
+        { id: 31, type: "fillblank", text: "By 1944, victory gardens produced about __________ % of vegetables in the US.", answer: "40" },
+        { id: 32, type: "fillblank", text: "Brooklyn Grange operates the world's largest rooftop __________ farms.", answer: "soil" },
+        { id: 33, type: "fillblank", text: "AeroFarms can produce up to __________ million pounds of leafy greens annually.", answer: "2" },
+        { id: 34, type: "fillblank", text: "Areas with limited access to fresh, affordable food are called food __________.", answer: "deserts" },
+        { id: 35, type: "fillblank", text: "Singapore aims to produce __________ % of its nutritional needs locally by 2030.", answer: "30" },
+        { id: 36, type: "tfng", text: "Urban farming is a completely new concept invented in the 21st century.", answer: "FALSE" },
+        { id: 37, type: "tfng", text: "Vertical farms can produce more food per square meter than conventional farms.", answer: "TRUE" },
+        { id: 38, type: "tfng", text: "Most urban farmers in Detroit earn high salaries.", answer: "NOT GIVEN" },
+        { id: 39, type: "tfng", text: "All vertical farms use renewable energy.", answer: "FALSE" },
+        { id: 40, type: "tfng", text: "Urban farming will completely replace traditional agriculture in the future.", answer: "FALSE" }
+      ]
+    }
+  ]
+};
+
+// ============ STATE ============
+let state = {
+  studentName: "",
+  studentId: "",
+  currentPassage: 0,
+  answers: {},
+  timeLeft: 60 * 60,
+  timerInterval: null
+};
+
+// ============ HELPERS ============
+const $ = (id) => document.getElementById(id);
+const allQuestions = () => testData.passages.flatMap(p => p.questions);
+
+function getBandScore(c) {
+  if (c >= 39) return 9.0; if (c >= 37) return 8.5; if (c >= 35) return 8.0;
+  if (c >= 33) return 7.5; if (c >= 30) return 7.0; if (c >= 27) return 6.5;
+  if (c >= 23) return 6.0; if (c >= 19) return 5.5; if (c >= 15) return 5.0;
+  if (c >= 13) return 4.5; if (c >= 10) return 4.0; if (c >= 8) return 3.5;
+  if (c >= 6) return 3.0; if (c >= 4) return 2.5; return 2.0;
+}
+
+function formatTime(s) {
+  const m = Math.floor(s / 60), sec = s % 60;
+  return `${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
+}
+
+function answeredCount() {
+  return Object.values(state.answers).filter(a => a && String(a).trim()).length;
+}
+
+// ============ WELCOME LOGIC ============
+function checkStartButton() {
+  const btn = $("startBtn");
+  btn.disabled = !($("studentName").value.trim() && $("studentId").value.trim());
+}
+$("studentName").addEventListener("input", checkStartButton);
+$("studentId").addEventListener("input", checkStartButton);
+
+$("startBtn").addEventListener("click", () => {
+  state.studentName = $("studentName").value.trim();
+  state.studentId = $("studentId").value.trim();
+  $("welcome").style.display = "none";
+  $("testScreen").classList.add("active");
+  $("candidateDisplay").textContent = `${state.studentName} · ${state.studentId}`;
+  startTimer();
+  renderTabs();
+  renderPassage();
+});
+
+// ============ TIMER ============
+function startTimer() {
+  updateTimerDisplay();
+  state.timerInterval = setInterval(() => {
+    state.timeLeft--;
+    updateTimerDisplay();
+    if (state.timeLeft <= 0) {
+      clearInterval(state.timerInterval);
+      submitTest();
+    }
+  }, 1000);
+}
+
+function updateTimerDisplay() {
+  $("timerText").textContent = formatTime(state.timeLeft);
+  if (state.timeLeft < 5 * 60) $("timer").classList.add("warning");
+}
+
+// ============ PASSAGE TABS ============
+function renderTabs() {
+  const tabs = $("passageTabs");
+  tabs.innerHTML = "";
+  testData.passages.forEach((p, idx) => {
+    const answered = p.questions.filter(q => state.answers[q.id] && String(state.answers[q.id]).trim()).length;
+    const btn = document.createElement("button");
+    btn.className = "passage-tab" + (idx === state.currentPassage ? " active" : "");
+    btn.innerHTML = `Passage ${p.number} <span class="count">(${answered}/${p.questions.length})</span>`;
+    btn.addEventListener("click", () => { state.currentPassage = idx; renderTabs(); renderPassage(); });
+    tabs.appendChild(btn);
+  });
+}
+
+// ============ PASSAGE & QUESTIONS ============
+function renderPassage() {
+  const p = testData.passages[state.currentPassage];
+  $("passageEyebrow").textContent = `Reading Passage ${p.number}`;
+  $("passageTitle").textContent = p.title;
+  $("passageText").innerHTML = p.text.split("\n\n").map(para => `<p>${escapeHtml(para)}</p>`).join("");
+  $("questionsHeader").textContent = `Questions ${p.questions[0].id}–${p.questions[p.questions.length-1].id}`;
+  renderQuestions();
+  $("prevBtn").disabled = state.currentPassage === 0;
+  $("nextBtn").disabled = state.currentPassage === testData.passages.length - 1;
+  $("progressDisplay").textContent = `${answeredCount()} / 40`;
+  // Scroll to top of both panels
+  document.querySelector(".passage-panel").scrollTop = 0;
+  document.querySelector(".questions-panel").scrollTop = 0;
+}
+
+function renderQuestions() {
+  const p = testData.passages[state.currentPassage];
+  const list = $("questionsList");
+  list.innerHTML = "";
+
+  p.questions.forEach(q => {
+    const isAnswered = state.answers[q.id] && String(state.answers[q.id]).trim();
+    const card = document.createElement("div");
+    card.className = "question-card" + (isAnswered ? " answered" : "");
+
+    const typeLabel = {
+      tfng: "True / False / Not Given",
+      fillblank: "Sentence Completion",
+      mcq: "Multiple Choice",
+      heading: "Heading Match"
+    }[q.type];
+
+    let optionsHtml = "";
+    if (q.type === "tfng") {
+      optionsHtml = `<div class="options-row">${["TRUE","FALSE","NOT GIVEN"].map(opt =>
+        `<button class="option-btn ${state.answers[q.id]===opt?'selected':''}" data-q="${q.id}" data-v="${opt}">${opt}</button>`
+      ).join("")}</div>`;
+    } else if (q.type === "fillblank") {
+      optionsHtml = `<input type="text" class="input-text" data-q="${q.id}" placeholder="Type your answer" value="${escapeHtml(state.answers[q.id] || '')}">`;
+    } else if (q.type === "mcq") {
+      optionsHtml = `<div class="options-list">${q.options.map((opt, i) => {
+        const letter = String.fromCharCode(65 + i);
+        return `<button class="option-mcq ${state.answers[q.id]===letter?'selected':''}" data-q="${q.id}" data-v="${letter}">
+          <span class="option-letter">${letter}</span><span class="option-text">${escapeHtml(opt)}</span>
+        </button>`;
+      }).join("")}</div>`;
+    } else if (q.type === "heading") {
+      let headingsBox = "";
+      if (q.showHeadings && q.headings) {
+        headingsBox = `<div class="headings-list"><div class="h-label">List of Headings</div>${
+          Object.entries(q.headings).map(([k,v]) => `<div><strong>${k}.</strong> ${escapeHtml(v)}</div>`).join("")
+        }</div>`;
+      }
+      optionsHtml = headingsBox + `<div class="options-row">${["i","ii","iii","iv","v"].map(opt =>
+        `<button class="option-btn ${state.answers[q.id]===opt?'selected':''}" data-q="${q.id}" data-v="${opt}">${opt}</button>`
+      ).join("")}</div>`;
+    }
+
+    card.innerHTML = `
+      <div class="question-meta">
+        <span class="question-num">${q.id}</span>
+        <span class="question-type">${typeLabel}</span>
+      </div>
+      <p class="question-text">${escapeHtml(q.text)}</p>
+      ${optionsHtml}
+    `;
+    list.appendChild(card);
+  });
+
+  // Wire up answer events
+  list.querySelectorAll("[data-q][data-v]").forEach(el => {
+    el.addEventListener("click", () => {
+      const qid = parseInt(el.dataset.q);
+      state.answers[qid] = el.dataset.v;
+      renderQuestions();
+      renderTabs();
+      $("progressDisplay").textContent = `${answeredCount()} / 40`;
+    });
+  });
+  list.querySelectorAll("input[data-q]").forEach(input => {
+    input.addEventListener("input", (e) => {
+      const qid = parseInt(e.target.dataset.q);
+      state.answers[qid] = e.target.value;
+      // Update tabs/progress without re-rendering input (would lose focus)
+      const card = e.target.closest(".question-card");
+      if (e.target.value.trim()) card.classList.add("answered");
+      else card.classList.remove("answered");
+      renderTabs();
+      $("progressDisplay").textContent = `${answeredCount()} / 40`;
+    });
+  });
+}
+
+function escapeHtml(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ============ NAVIGATION ============
+$("prevBtn").addEventListener("click", () => {
+  if (state.currentPassage > 0) { state.currentPassage--; renderTabs(); renderPassage(); }
+});
+$("nextBtn").addEventListener("click", () => {
+  if (state.currentPassage < testData.passages.length - 1) { state.currentPassage++; renderTabs(); renderPassage(); }
+});
+
+// ============ SUBMIT ============
+$("submitBtn").addEventListener("click", () => {
+  const a = answeredCount();
+  $("modalAnswered").textContent = `${a} of 40`;
+  $("modalUnanswered").style.display = a < 40 ? "block" : "none";
+  $("modalAllAnswered").style.display = a === 40 ? "block" : "none";
+  $("submitModal").classList.add("active");
+});
+$("cancelSubmitBtn").addEventListener("click", () => $("submitModal").classList.remove("active"));
+$("confirmSubmitBtn").addEventListener("click", () => {
+  $("submitModal").classList.remove("active");
+  submitTest();
+});
+
+function submitTest() {
+  if (state.timerInterval) clearInterval(state.timerInterval);
+  $("testScreen").classList.remove("active");
+  $("resultsScreen").classList.add("active");
+  renderResults();
+  window.scrollTo(0, 0);
+}
+
+// ============ RESULTS ============
+function renderResults() {
+  let correct = 0;
+  const details = allQuestions().map(q => {
+    const userAnswer = (state.answers[q.id] || "").toString().trim().toLowerCase();
+    const correctAnswer = q.answer.toString().trim().toLowerCase();
+    const isCorrect = userAnswer === correctAnswer;
+    if (isCorrect) correct++;
+    return { ...q, userAnswer: state.answers[q.id] || "", isCorrect };
+  });
+
+  $("resultName").textContent = state.studentName;
+  $("resultId").textContent = `Student ID: ${state.studentId}`;
+  $("correctCount").textContent = correct;
+  $("bandScore").textContent = getBandScore(correct).toFixed(1);
+  $("accuracy").textContent = Math.round((correct / 40) * 100);
+
+  const body = $("answerKeyBody");
+  body.innerHTML = "";
+  testData.passages.forEach(p => {
+    const sec = document.createElement("div");
+    sec.className = "passage-section";
+    sec.innerHTML = `<h3 class="passage-section-title">Passage ${p.number} — ${escapeHtml(p.title)}</h3>`;
+    p.questions.forEach(q => {
+      const d = details.find(x => x.id === q.id);
+      const row = document.createElement("div");
+      row.className = "answer-row " + (d.isCorrect ? "correct" : "incorrect");
+      row.innerHTML = `
+        <div class="answer-icon">${d.isCorrect ? "✓" : "✕"}</div>
+        <div class="answer-content">
+          <div class="answer-question"><span class="qnum">Q${q.id}.</span> ${escapeHtml(q.text)}</div>
+          <div class="answer-grid">
+            <div class="your-answer">
+              <span class="label">Your Answer</span>
+              <span class="value">${d.userAnswer ? escapeHtml(d.userAnswer) : "(blank)"}</span>
+            </div>
+            <div class="correct-answer">
+              <span class="label">Correct Answer</span>
+              <span class="value">${escapeHtml(q.answer)}</span>
+            </div>
+          </div>
+        </div>
+      `;
+      sec.appendChild(row);
+    });
+    body.appendChild(sec);
+  });
+}
+
+// ============ RESTART ============
+$("restartBtn").addEventListener("click", () => {
+  state = { studentName: "", studentId: "", currentPassage: 0, answers: {}, timeLeft: 60 * 60, timerInterval: null };
+  $("studentName").value = "";
+  $("studentId").value = "";
+  checkStartButton();
+  $("timer").classList.remove("warning");
+  $("resultsScreen").classList.remove("active");
+  $("welcome").style.display = "flex";
+  window.scrollTo(0, 0);
+});
+</script>
+</body>
+</html>
